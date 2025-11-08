@@ -24,7 +24,7 @@ public:
         // Publisher
         cmd_pub_ = this->create_publisher<geometry_msgs::msg::Twist>("/cmd_vel", 10);
 
-        RCLCPP_INFO(this->get_logger(), "✅ AutoPilot node started.");
+        RCLCPP_INFO(this->get_logger(), "AutoPilot node started.");
     }
 
 private:
@@ -43,7 +43,7 @@ private:
         // Stop condition — for example, total distance > 10 meters
         if (total_distance_ > 10.0 && !exploration_done_)
         {
-            RCLCPP_WARN(this->get_logger(), "🛑 Exploration finished (area coverage threshold reached).");
+            RCLCPP_WARN(this->get_logger(), "Exploration finished (area coverage threshold reached).");
             stop_robot();
             exploration_done_ = true;
         }
